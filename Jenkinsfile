@@ -36,7 +36,7 @@ pipeline {
         stage('Hello-world Docker Test') {
             steps {
                 script {
-                def set_container = sh(script: ''' CONTAINER_NAME="hello-world-test"
+                def set_container = sh(script: ''' CONTAINER_NAME="hello-world-run"
                                                    OLD="$(docker ps --all --quiet --filter=name="$CONTAINER_NAME")"
                                                    if [ -n "$OLD" ]; then
                                                     docker rm -f $OLD
